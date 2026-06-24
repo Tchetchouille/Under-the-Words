@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://ogpbq1mkuuwv"]
+
+[ext_resource type="Script" uid="uid://dj3saafg5g0as" path="res://Scenes/Levels/Bases/base_level.gd" id="1_ssatm"]
+
+[node name="BaseLevel" type="Node2D" unique_id=1681375748]
+script = ExtResource("1_ssatm")
+lvl_text = Array[String](["This is the story of _______.", "I haven't written it yet.", "But I hope it will be interesting.", "I really do."])

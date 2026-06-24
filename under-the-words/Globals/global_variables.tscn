@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dhl8ad4cwliyw"]
+
+[ext_resource type="Script" uid="uid://ckur31nicvvnl" path="res://Globals/global_variables.gd" id="1_w5elx"]
+
+[node name="GlobalVariables" type="Node" unique_id=1341810578]
+script = ExtResource("1_w5elx")
+character_width = 10
+character_height = 15

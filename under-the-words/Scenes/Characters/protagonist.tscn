@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cxe66xnb08vqo"]
+
+[ext_resource type="Script" uid="uid://bkykfub5a8vhd" path="res://Scenes/Characters/protagonist.gd" id="1_hy7eo"]
+[ext_resource type="FontFile" uid="uid://bs51fqbjjj5mh" path="res://Assets/Fonts/code-new-roman/Code New Roman b.otf" id="2_rgu6h"]
+
+[node name="Protagonist" type="Node2D" unique_id=1141438079]
+script = ExtResource("1_hy7eo")
+word = "protagonist"
+color = Color(0.8533701, 0, 0.4205537, 1)
+bold_font = ExtResource("2_rgu6h")

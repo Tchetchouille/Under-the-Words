@@ -1,0 +1,6 @@
+[gd_resource type="Theme" format=3 uid="uid://bk7h6t1gifgic"]
+
+[ext_resource type="FontFile" uid="uid://cf4g8g4jolmw4" path="res://Assets/Fonts/code-new-roman/Code New Roman.otf" id="1_4ejbr"]
+
+[resource]
+default_font = ExtResource("1_4ejbr")
