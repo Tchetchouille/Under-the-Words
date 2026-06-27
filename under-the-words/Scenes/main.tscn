@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dhtco7cwxmgwf"]
+
+[ext_resource type="PackedScene" uid="uid://ogpbq1mkuuwv" path="res://Scenes/Levels/Bases/base_level.tscn" id="1_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://cxe66xnb08vqo" path="res://Scenes/Characters/protagonist.tscn" id="2_8gbba"]
+
+[node name="Main" type="Node" unique_id=691793015]
+
+[node name="BaseLevel" parent="." unique_id=1681375748 instance=ExtResource("1_bo1nx")]
+
+[node name="Protagonist" parent="." unique_id=1141438079 instance=ExtResource("2_8gbba")]

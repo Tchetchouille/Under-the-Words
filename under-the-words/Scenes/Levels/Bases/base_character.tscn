@@ -1,10 +1,8 @@
 [gd_scene format=3 uid="uid://3v6xymivbq8j"]
 
 [ext_resource type="Theme" uid="uid://bk7h6t1gifgic" path="res://Resources/Themes/level_theme.tres" id="1_cw6qq"]
-[ext_resource type="Script" uid="uid://cotfwj3mk8fqf" path="res://Scenes/Levels/Bases/base_character.gd" id="1_v2eu3"]
 
 [node name="BaseCharacter" type="Node2D" unique_id=374367261]
-script = ExtResource("1_v2eu3")
 
 [node name="Control" type="Control" parent="." unique_id=1948114063]
 layout_mode = 3

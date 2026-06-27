@@ -4,4 +4,4 @@
 
 [node name="BaseLevel" type="Node2D" unique_id=1681375748]
 script = ExtResource("1_ssatm")
-lvl_text = Array[String](["This is the story of _______.", "I haven't written it yet.", "But I hope it will be interesting.", "I really do."])
+lvl_text = Array[String](["This is the story of the ___________.", "I haven't written it yet.", "But I hope it will be interesting.", "I really do."])
