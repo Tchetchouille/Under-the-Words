@@ -5,6 +5,7 @@ extends Node2D
 @export var bold_font : FontFile
 
 @onready var c_width = GlobalVariables.character_width
+@onready var c_height = GlobalVariables.character_height
 
 @onready var base_character = preload("res://Scenes/Levels/Bases/base_character.tscn")
 
@@ -36,9 +37,13 @@ func _input(event):
 
 func create_body(string):
 	var x = 0
+	# Background
+	# We multiply by 1.05 to have a margin
+	$Background.size = Vector2(string.split().size() * c_width * 0.97, c_height * 1.05)
+	# Text
 	for character in string.split():
 		var p_character = base_character.instantiate()
-		var label = p_character.get_child(0).get_child(0)
+		var label = p_character.get_node('Control/Label')
 		# In the case of the protag, I don't use special characters yet.
 		label.text = character
 		# Making it bold and colored
@@ -85,5 +90,7 @@ func move(direction):
 		_:
 			pass
 	# Updating position
-	position.x = norm_position.x * GlobalVariables.character_width
-	position.y = norm_position.y * GlobalVariables.character_height
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, 'position', Vector2(norm_position.x * GlobalVariables.character_width, norm_position.y * GlobalVariables.character_height), 0.1)
+	#position.x = norm_position.x * GlobalVariables.character_width
+	#position.y = norm_position.y * GlobalVariables.character_height

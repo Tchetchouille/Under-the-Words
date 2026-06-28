@@ -8,3 +8,22 @@ script = ExtResource("1_hy7eo")
 word = "protagonist"
 color = Color(0.8533701, 0, 0.4205537, 1)
 bold_font = ExtResource("2_rgu6h")
+
+[node name="Background" type="ColorRect" parent="." unique_id=988261933]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 1)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=50129018]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D" unique_id=1234496337]
+layer = -10
+
+[node name="GlobalBackground" type="ColorRect" parent="Camera2D/CanvasLayer" unique_id=374455536]
+z_index = -10
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

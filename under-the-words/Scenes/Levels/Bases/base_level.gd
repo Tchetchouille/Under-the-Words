@@ -34,7 +34,7 @@ func make_level(strings):
 		for j in characters.size():
 			var character = characters[j]
 			var lvl_character = base_character.instantiate()
-			var label = lvl_character.get_child(0).get_child(0)
+			var label = lvl_character.get_node('Control/Label')
 			# Setting the text of label of the scene
 			# Checking if the character is one of the special characters
 			match character:
