@@ -6,7 +6,8 @@
 [node name="Protagonist" type="Node2D" unique_id=1141438079]
 script = ExtResource("1_hy7eo")
 word = "protagonist"
-color = Color(0.8533701, 0, 0.4205537, 1)
+text_color = Color(0.9577268, 0, 0.5049397, 1)
+outline_color = Color(0.5743062, 0, 0.27450556, 1)
 bold_font = ExtResource("2_rgu6h")
 
 [node name="Background" type="ColorRect" parent="." unique_id=988261933]

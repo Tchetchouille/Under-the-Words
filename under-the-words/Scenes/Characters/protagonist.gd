@@ -1,7 +1,8 @@
 extends Node2D
 
 @export var word : String
-@export var color : Color
+@export var text_color : Color
+@export var outline_color : Color
 @export var bold_font : FontFile
 
 @onready var c_width = GlobalVariables.character_width
@@ -48,7 +49,8 @@ func create_body(string):
 		label.text = character
 		# Making it bold and colored
 		label.add_theme_font_override('font', bold_font)
-		label.add_theme_color_override('font_color', color)
+		label.add_theme_color_override('font_color', text_color)
+		label.add_theme_color_override("font_outline_color", outline_color)
 		p_character.position.x = x
 		add_child(p_character)
 		x += c_width
