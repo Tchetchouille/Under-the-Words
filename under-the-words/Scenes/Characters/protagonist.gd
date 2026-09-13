@@ -10,6 +10,7 @@ extends Node2D
 
 @onready var base_character = preload("res://Scenes/Levels/Bases/base_character.tscn")
 
+# Using virtual grid coordinates, not the actual coordinates from the gamespace
 var norm_position = {
 	'x' : 0,
 	'y' : 0
@@ -63,9 +64,10 @@ func move(direction):
 				# We check if there is space for the last character at y - 1
 				if not (norm_position.x + word.length()) >= LevelManager.map[norm_position.y - 1].size():
 					norm_position.y += -1
+				else:
+					bonk(0, -1)
 			else:
-				# Put feedback here (sound, maybe animation)
-				pass
+				bonk(0, -1)
 		'down':
 			# If not at the bottom of the space
 			if not norm_position.y + 1 >= LevelManager.map.size():
@@ -73,26 +75,35 @@ func move(direction):
 				if not (norm_position.x + word.length()) >= LevelManager.map[norm_position.y + 1].size():
 					norm_position.y += 1
 				else:
-					# Put feedback here (sound, maybe animation)
-					pass
+					bonk(0, 1)
+			else:
+				bonk(0, 1)
 		'right':
 			# We check if the wall is hit
 			if not (norm_position.x + word.length() + 1) >= LevelManager.map[norm_position.y].size():
 				norm_position.x += 1
 			else:
-				# Put feedback here (sound, maybe animation)
-				pass
+				bonk(1, 0)
 		'left':
 			# We check if the wall is hit
 			if not norm_position.x <= 0:
 				norm_position.x += -1
 			else:
-				# Put feedback here (sound, maybe animation)
-				pass
+				bonk(-1, 0)
 		_:
 			pass
 	# Updating position
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, 'position', Vector2(norm_position.x * GlobalVariables.character_width, norm_position.y * GlobalVariables.character_height), 0.1)
-	#position.x = norm_position.x * GlobalVariables.character_width
-	#position.y = norm_position.y * GlobalVariables.character_height
+
+# Feedback when move not possible
+func bonk(x, y):
+	# Audio
+	$SoundEffects/Bonk.play()
+	# Visual
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, 'position', Vector2((norm_position.x + x) * GlobalVariables.character_width, (norm_position.y + y) * GlobalVariables.character_height), 0.05)
+	await tween.finished
+	tween.stop()
+	tween.tween_property(self, 'position', Vector2((norm_position.x + x) * GlobalVariables.character_width, (norm_position.y + y) * GlobalVariables.character_height), 0.05)
+	

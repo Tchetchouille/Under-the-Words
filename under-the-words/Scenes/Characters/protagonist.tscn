@@ -2,6 +2,15 @@
 
 [ext_resource type="Script" uid="uid://bkykfub5a8vhd" path="res://Scenes/Characters/protagonist.gd" id="1_hy7eo"]
 [ext_resource type="FontFile" uid="uid://bs51fqbjjj5mh" path="res://Assets/Fonts/code-new-roman/Code New Roman b.otf" id="2_rgu6h"]
+[ext_resource type="AudioStream" uid="uid://cnn01p212kk2l" path="res://Assets/Sounds/Bonk1.mp3" id="3_xd01h"]
+[ext_resource type="AudioStream" uid="uid://bcyx8183jdf70" path="res://Assets/Sounds/Bonk2.mp3" id="4_x3oo8"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_x3oo8"]
+playback_mode = 1
+random_pitch = 1.0594631
+streams_count = 3
+stream_0/stream = ExtResource("3_xd01h")
+stream_1/stream = ExtResource("4_x3oo8")
 
 [node name="Protagonist" type="Node2D" unique_id=1141438079]
 script = ExtResource("1_hy7eo")
@@ -28,3 +37,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="SoundEffects" type="Node" parent="." unique_id=2003881898]
+
+[node name="Bonk" type="AudioStreamPlayer" parent="SoundEffects" unique_id=1407431614]
+stream = SubResource("AudioStreamRandomizer_x3oo8")
