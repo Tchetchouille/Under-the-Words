@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="level" format=3 uid="uid://ekc8yhgn8vh1"]
+
+[ext_resource type="Script" uid="uid://bltxjqukux8kw" path="res://Resources/WIP - Levels/level_resource_base.gd" id="1_1e6g4"]
+
+[resource]
+script = ExtResource("1_1e6g4")
+metadata/_custom_type_script = "uid://bltxjqukux8kw"

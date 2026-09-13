@@ -1,0 +1,4 @@
+extends Resource
+class_name Level
+
+# I MUST FIND INFO ON RESOURCE TO BE ABLE TO HAVE SAVED FILES OF MY LEVELS
